@@ -30,3 +30,11 @@ mongoose.connect(process.env.MONGO_URI)
   .catch((err) => {
     console.log(err)
   }) 
+
+  //Require cors
+  const cors = require('cors');
+  //set up the express app
+  const app = express();
+
+  //allow request from all origins (for deployment only)
+  app.use(cors());
